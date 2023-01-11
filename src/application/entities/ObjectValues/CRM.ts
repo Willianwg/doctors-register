@@ -12,7 +12,7 @@ export class CRM {
     }
 
     validateCRMLength(crm: number) {
-        return crm.toString().length < 7;
+        return crm.toString().length <= 7;
     }
 
     get value() {
