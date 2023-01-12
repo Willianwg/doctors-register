@@ -11,7 +11,7 @@ describe("Medic", ()=>{
             phone: 12341234,
             cellPhone: 955555555,
             postalCode: 11223345,
-            specialties: new Specialties(["Cirurgia de tórax", "Alergologia"]),
+            specialties: new Specialties(["CIRURGIA_DE_TORAX", "ANGIOLOGIA"]),
         }, "test-id");
 
         expect(medic).toBeTruthy();
