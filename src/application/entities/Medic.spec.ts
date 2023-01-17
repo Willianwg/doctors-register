@@ -1,7 +1,7 @@
 import { Medic } from "./Medic"
 import { CRM } from "./ObjectValues/CRM";
 import { Name } from "./ObjectValues/Name";
-import { Specialties } from "./ObjectValues/Specialties";
+import { Specialties } from "./ObjectValues/MedicSpecialties";
 
 describe("Medic", ()=>{
     it("should be able to create Medic", ()=>{

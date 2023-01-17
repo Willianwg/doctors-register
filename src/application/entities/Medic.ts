@@ -1,7 +1,7 @@
 import { Replace } from "src/helpers/Replace";
 import { CRM } from "./ObjectValues/CRM";
 import { Name } from "./ObjectValues/Name";
-import { Specialties } from "./ObjectValues/Specialties";
+import { MedicSpecialties } from "./ObjectValues/MedicSpecialties";
 
 type MedicProps = {
     name: Name;
@@ -9,7 +9,7 @@ type MedicProps = {
     phone: number;
     cellPhone: number;
     postalCode: number;
-    specialties: Specialties;
+    specialties: MedicSpecialties;
     createdAt: Date;
     deletedAt?: Date | null;
 }

@@ -1,4 +1,6 @@
-enum Specialty {
+import { Specialty } from "../Specialty";
+
+enum SpecialtyNames {
     ALERGOLOGIA = "Alergologia",
     ANGIOLOGIA = "Angiologia",
     BUCOMAXILO = "Buco maxilo",
@@ -9,12 +11,10 @@ enum Specialty {
     CIRURGIA_DE_TORAX = "Cirurgia de tórax",
 }
 
-type SpecialtyTypes = "ALERGOLOGIA" | "ANGIOLOGIA" | "BUCOMAXILO" | "CARDIOLOGIA_CLINICA" | "CARDIOLOGIA_INFANTIL" | "CIRURGIA_CABECA_E_PESCOCO" | "CIRURGIA_CARDIACA" | "CIRURGIA_DE_TORAX";
+export class MedicSpecialties {
+    private specialties: Specialty[];
 
-export class Specialties {
-    private specialties: SpecialtyTypes[];
-
-    constructor(specialties: SpecialtyTypes[]) {
+    constructor(specialties: Specialty[]) {
         if (specialties.length < 2) {
             throw new Error("You must define at least 2 specialties");
         }
@@ -23,12 +23,12 @@ export class Specialties {
     }
 
     isSpecialtyValid(specialty: string) {
-        return Specialty[specialty] ? true : false;
+        return SpecialtyNames[specialty] ? true : false;
     }
 
-    set value(specialties: SpecialtyTypes[]){
+    set value(specialties: Specialty[]){
         const validSpecialties = specialties.map(specialty => {
-            const isValid = this.isSpecialtyValid(specialty);
+            const isValid = this.isSpecialtyValid(specialty.name);
             if (!isValid) throw new Error("Specialty not valid. Be aware to write as shown in the documentation");
             
             return specialty;
