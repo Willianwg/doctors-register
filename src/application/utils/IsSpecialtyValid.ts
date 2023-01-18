@@ -1,10 +1,10 @@
-import { ValidSpecialties } from "../entities/Specialty";
+import { validSpecialties } from "../entities/Specialty";
 
 export class SpecialtyUtils {
     static isValid(specialties: string[]) {
-        const response = specialties.map(specialty => {
-            if (!ValidSpecialties[specialty]) {
-                throw new Error("Specialty not valid. Be aware to write as shown in the documentation");
+        specialties.map(specialty => {
+            if (!validSpecialties[specialty]) {
+                throw new Error("Specialty not valid. Be aware to write as shown in the documentation. The valid specialties are: " + validSpecialties);
             }
         });
     }
