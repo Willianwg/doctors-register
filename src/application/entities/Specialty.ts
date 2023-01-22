@@ -1,6 +1,4 @@
-type AvailableSpecialties = "ALERGOLOGIA" | "ANGIOLOGIA" | "BUCOMAXILO" | "CARDIOLOGIA_CLINICA" | "CARDIOLOGIA_INFANTIL" | "CIRURGIA_CABECA_E_PESCOCO" | "CIRURGIA_CARDIACA" | "CIRURGIA_DE_TORAX";
-
-export const validSpecialties : AvailableSpecialties[] = [
+export const validSpecialties = [
     'ALERGOLOGIA',
     'ANGIOLOGIA',
     'BUCOMAXILO',
@@ -12,7 +10,7 @@ export const validSpecialties : AvailableSpecialties[] = [
 ]
 
 type SpecialtyProps = {
-    name: AvailableSpecialties;
+    name: string;
 }
 
 export class Specialty {
@@ -20,8 +18,8 @@ export class Specialty {
     private props: SpecialtyProps;
 
     constructor(props: SpecialtyProps, id: string) {
-        if(!validSpecialties[props.name]){
-            throw new Error("Specialty or format invalid. The only available specialties are: " + validSpecialties );
+        if (!validSpecialties.includes(props.name)) {
+            throw new Error("Specialty or format invalid. The only available specialties are: " + validSpecialties);
         }
 
         this._id = id;
