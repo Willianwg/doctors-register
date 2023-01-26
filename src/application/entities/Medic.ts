@@ -43,17 +43,32 @@ export class Medic {
         return this.props.phone;
     }
 
+    set phone(phone: number) {
+        this.props.phone = phone;
+    }
+
     get cellPhone() {
         return this.props.cellPhone;
+    }
+
+    set cellPhone(cellPhone: number) {
+        this.props.cellPhone = cellPhone;
     }
 
     get postalCode() {
         return this.props.postalCode;
     }
 
-    
+    set postalCode(postalCode: number) {
+        this.props.postalCode = postalCode;
+    }
+
     get specialties() {
         return this.props.specialties;
+    }
+
+    set specialties(specialties: Specialty[]) {
+        this.props.specialties = specialties;
     }
     
     get createdAt() {
