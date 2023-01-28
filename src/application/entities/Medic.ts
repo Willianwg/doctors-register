@@ -78,4 +78,8 @@ export class Medic {
     get deletedAt() {
         return this.props.deletedAt;
     }
+
+    delete(){
+        this.props.deletedAt = new Date();
+    }
 }
